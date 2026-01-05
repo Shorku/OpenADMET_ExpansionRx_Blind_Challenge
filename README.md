@@ -1,1 +1,1 @@
-Submission status: transitional (not validated)
+Submission status: transitional (averaged)
