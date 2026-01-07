@@ -1,4 +1,4 @@
-Submission status:               transitional (not validated, single model)
+Submission status:               iteration 1 transitional (a part of ensemble-candidate, 3 models average)
 
 Model type:                      [RhNet2](https://github.com/Shorku/rhnet2) (revised PyG implementation)
 
