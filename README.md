@@ -1,4 +1,4 @@
-Submission status:               iteration 2 transitional (sub-ensemble of 3 models from ensemble-candidate)
+Submission status:               iteration 2 transitional (sub-ensemble from ensemble-candidate)
 
 Model type:                      [RhNet2](https://github.com/Shorku/rhnet2) (revised PyG implementation)
 
@@ -23,3 +23,13 @@ Input data pipeline code status: preparation for publication
 **Data**: the challenge data + phys.chem. properties of additional ~6000 (non-drug mostly) molecules with no LogD or KSOL known
 
 **Metrics**: MA-RAE 0.61 | LogD 0.29 | KSOL 0.38 | MLM 0.36 | HLM 0.30 | Efflux 0.32 | Papp 0.21 | MPPB 0.19 | MBPB 0.16 | MGMB 0.25
+
+### Iteration 2 (Vox populi)
+
+**Status**: 🚧 🛠️ 🚧
+
+**Model**: 🚧 🛠️ 🚧
+
+**Data**: the challenge data + phys.chem. properties of additional ~6000 (non-drug mostly) molecules with no LogD or KSOL known
+
+**Metrics**: 🚧 🛠️ 🚧
