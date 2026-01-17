@@ -1,4 +1,4 @@
-Submission status:               iteration 6 transitional (single model, not validated)
+Submission status:               iteration 7 transitional (2 models)
 
 Model type:                      [RhNet2](https://github.com/Shorku/rhnet2) (revised PyG implementation)
 
