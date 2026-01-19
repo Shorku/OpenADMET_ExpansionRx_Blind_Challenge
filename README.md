@@ -1,4 +1,4 @@
-Submission status:               iteration 7 transitional (2 models)
+Submission status:               final(?) 
 
 Model type:                      [RhNet2](https://github.com/Shorku/rhnet2) (revised PyG implementation)
 
@@ -76,9 +76,9 @@ Input data pipeline code status: preparation for publication
 
 ### Iteration 7 (EOF)
 
-**Status**: 🚧 🛠️ 🚧
+**Status**: complete(?)
 
-**Model**: 🚧 🛠️ 🚧
+**Model**: ensemble of 65 8-layer GNNs
 
 **Data**: the challenge data + phys.chem. properties of additional ~6000 (non-drug mostly, no LogD or KSOL) molecules + ~5000 molecules from ChEMBL (LogD, HLM, MLM, MPPB targets) filtered and aggregated by the assay descriptions
 
