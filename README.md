@@ -1,10 +1,29 @@
-Submission status:               final(?) 
+## OpenADMET + ExpansionRx Blind Challenge
+
+The repository contains a description of the solution to the 
+**OpenADMET + ExpansionRx Blind Challenge** by the user `Shorku`.
+
+Author: Oleg Gromov
+
+Date: Dec 2025 - Jan 2026
+
+### Preface
+
+The main objective of the presented solution is to field-test learning from
+the full electronic structure of a molecule on the real-world data in real
+competition conditions to obtain a fair performance assessment. Hence, the
+solution is constrained to a single model architecture of interest.
+
+**TL;DR** Somehow it performs even better than expected but much work is still
+to be done
+
+### Overview
 
 Model type:                      [RhNet2](https://github.com/Shorku/rhnet2) (revised PyG implementation)
 
 Model description:               [JCTC paper](https://doi.org/10.1021/acs.jctc.5c00425)
 
-Fitting regime:                  multitask
+Fitting regime:                  multitask (9 challenge + 117 additional endpoints)
 
 Model code status:               preparation for publication
 
@@ -76,10 +95,10 @@ Input data pipeline code status: preparation for publication
 
 ### Iteration 7 (EOF)
 
-**Status**: complete(?)
+**Status**: complete
 
 **Model**: ensemble of 65 8-layer GNNs
 
 **Data**: the challenge data + phys.chem. properties of additional ~6000 (non-drug mostly, no LogD or KSOL) molecules + ~5000 molecules from ChEMBL (LogD, HLM, MLM, MPPB targets) filtered and aggregated by the assay descriptions
 
-**Metrics**: 🚧 🛠️ 🚧
+**Metrics**: MA-RAE 0.58 | LogD 0.28 | KSOL 0.38 | MLM 0.35 | HLM 0.29 | Efflux 0.31 | Papp 0.22 | MPPB 0.19 | MBPB 0.14 | MGMB 0.20
