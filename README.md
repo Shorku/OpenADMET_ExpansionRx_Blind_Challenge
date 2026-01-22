@@ -101,4 +101,16 @@ Input data pipeline code status: preparation for publication
 
 **Data**: the challenge data + phys.chem. properties of additional ~6000 (non-drug mostly, no LogD or KSOL) molecules + ~5000 molecules from ChEMBL (LogD, HLM, MLM, MPPB targets) filtered and aggregated by the assay descriptions
 
-**Metrics**: MA-RAE 0.58 | LogD 0.28 | KSOL 0.38 | MLM 0.35 | HLM 0.29 | Efflux 0.31 | Papp 0.22 | MPPB 0.19 | MBPB 0.14 | MGMB 0.20
+**Metrics**
+
+Final submission: 
+
+MA-RAE 0.58 | LogD 0.28 | KSOL 0.38 | MLM 0.35 | HLM 0.29 | Efflux 0.31 | Papp 0.22 | MPPB 0.19 | MBPB 0.14 | MGMB 0.20
+
+Best compiled from various submissions*: 
+
+MA-RAE None | LogD 0.27 | KSOL 0.37 | MLM 0.35 | HLM 0.29 | Efflux 0.29 | Papp 0.21 | MPPB 0.19 | MBPB 0.14 | MGMB 0.19
+
+*for consistency reasons the final submission consists of predictions* 
+*by a final ensemble rather than a compilation of the best shots from*
+*different models*
