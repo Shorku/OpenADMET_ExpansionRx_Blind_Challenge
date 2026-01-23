@@ -15,7 +15,7 @@ competition conditions to obtain a fair performance assessment. Hence, the
 solution is constrained to a single model architecture of interest.
 
 **TL;DR** Somehow it performs even better than expected but much work is still
-to be done
+to be done.
 
 ### Overview
 
@@ -109,8 +109,29 @@ MA-RAE 0.58 | LogD 0.28 | KSOL 0.38 | MLM 0.35 | HLM 0.29 | Efflux 0.31 | Papp 0
 
 Best compiled from various submissions*: 
 
-MA-RAE None | LogD 0.27 | KSOL 0.37 | MLM 0.35 | HLM 0.29 | Efflux 0.29 | Papp 0.21 | MPPB 0.19 | MBPB 0.14 | MGMB 0.19
+MA-RAE nan | LogD 0.27 | KSOL 0.37 | MLM 0.35 | HLM 0.29 | Efflux 0.29 | Papp 0.21 | MPPB 0.19 | MBPB 0.14 | MGMB 0.19
 
-*for consistency reasons the final submission consists of predictions* 
-*by a final ensemble rather than a compilation of the best shots from*
-*different models*
+*for consistency reasons the final submission consists of the predictions* 
+*by the final ensemble rather than a compilation of the best shots from*
+*different submissions throughout the challenge*
+
+### Outline
+
+**Model**
+
+✅️ input data pipeline efficiency
+
+✅️ RAM consumption 
+
+✅️ embeddings dimensions
+
+⛔️ model stability
+
+**Challenge solution issues**
+
+- somewhat random collection of external data
+- train data distribution not addressed
+- naive random train-val split
+- insufficient analysis of the performance on the val data
+
+All in all the next time there will be less development and more data science.
