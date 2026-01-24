@@ -204,7 +204,15 @@ file: `rot_endpoints.zip`
 ### Methods
 
 The general idea is outlined in the [JCTC paper](https://doi.org/10.1021/acs.jctc.5c00425). 
-The description of the particular workflow used here is underway. 
+
+- Embed up to 25 conformers (RDKit)
+- Geometry optimization (RDKit, only if MMFF94 parameters are available)
+- Remove duplicates
+- Geometry optimization (xTB)
+- Remove high energy conformers (10 kJ/mole window)
+- Remove duplicates
+- Generate 5 replicas for each structure via whole molecule random rotation
+- Calculate molecular orbitals (xTB, PTB parametrization)
 
 ### Data stats
 
