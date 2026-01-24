@@ -82,7 +82,7 @@ conformer of a molecule with internal id `id`.
 
 train set: ⏳️🗜️📤️
 
-test set: [data at kaggle](https://www.kaggle.com/datasets/oleggromov/openadmet-expansionrx-challenge-test-orbs)
+test set: ⏳️🗜️📤️
 
 **External train data (no ADMET properties)**
 
