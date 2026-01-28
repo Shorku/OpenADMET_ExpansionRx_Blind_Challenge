@@ -7,6 +7,13 @@ Author: Oleg Gromov
 
 Date: Dec 2025 - Jan 2026
 
+## Contents
+
+- [Preface](#preface)
+- [Overview](#overview)
+- [Outline](#outline)
+- [Timeline](#timeline)
+
 ### Preface
 
 The main objective of the presented solution is to field-test learning from
@@ -32,6 +39,61 @@ Input data type:                 electron density
 Input data calculation backend:  [xTB](https://github.com/grimme-lab/xtb)
 
 Input data pipeline code status: preparation for publication
+
+### Outline
+
+**Model**
+
+✅️ input data pipeline efficiency
+
+✅️ RAM consumption 
+
+✅️ embeddings dimensions
+
+⛔️ model stability
+
+⛔️ self-attention
+
+**Challenge solution issues (my faults)**
+
+- somewhat random collection of external data
+- train data distribution not addressed
+- naive random train-val split
+- insufficient analysis of the performance on the val data
+- tautomers not addressed 
+
+**Comment**
+
+Replacing DFT densities with PTB densities along with the model's basis and MOs projection procedure updates 
+allowed to speed up the input data generation be several orders of magnitude compared to the previous version. 
+E.g. the total dataset of 30,000 molecules (> 200,000 conformer structures and > 1,000,000 wavefunctions, 
+including test set and unused data) required only ~2300 CPUh (less than 3 days with a single 32-core node).
+
+Inherent redundancy in the graph data (the initial states of some embeddings are essentially different views 
+of the same matrices) was made to appear only inside the model. 
+This and the more aggressive graph pruning and input data precision reduction resulted in up to ~10 times 
+less RAM consumption compared to the previous version. 
+It allowed to accommodate a train set of ~15,000 molecules (~500,000 wavefunctions) in just ~100 Gb of RAM 
+and to some extent improved the situation with RAM -> VRAM transfer bottleneck. 
+Still, the bandwidth is critical.
+
+For some reason, the straightforward reimplementation of the local self-attention mechanism from the previous
+version resulted in severe train loss oscillations. 
+Seems to be something technical, I need to look into it.
+
+The major remaining issue is model's instability (expected for a GNN tbh). 
+Here, I tried a multistage fitting switching optimizers to achieve better stability.
+It did help but only a little.
+For this reason, the fine optimization of model and data parameters for better competition performance 
+is still complicated as it would each time require a number of repeated fittings.
+Hence, I didn't really try to tune the hyperparameters, properly balance the training data, or choose 
+an adequate train/val splitting strategy. 
+Instead, I focused my attention on the model architecture and training details that could lead to noticeable 
+performance improvements even in an unstable model.
+
+All in all, now I have some homework to do and the next time there will be less development and more data science.
+
+### Timeline
 
 ### Iteration 1 (baseline)
 
@@ -115,55 +177,4 @@ MA-RAE nan | LogD 0.27 | KSOL 0.37 | MLM 0.35 | HLM 0.29 | Efflux 0.29 | Papp 0.
 *by the final ensemble rather than a compilation of the best shots from*
 *different submissions throughout the challenge*
 
-### Outline
 
-**Model**
-
-✅️ input data pipeline efficiency
-
-✅️ RAM consumption 
-
-✅️ embeddings dimensions
-
-⛔️ model stability
-
-⛔️ self-attention
-
-**Challenge solution issues**
-
-- somewhat random collection of external data
-- train data distribution not addressed
-- naive random train-val split
-- insufficient analysis of the performance on the val data
-- tautomers not addressed 
-
-**Comment**
-
-Replacing DFT densities with PTB densities along with the model's basis and MOs projection procedure updates 
-allowed to speed up the input data generation be several orders of magnitude compared to the previous version. 
-E.g. the total dataset of 30,000 molecules (> 200,000 conformer structures and > 1,000,000 wavefunctions, 
-including test set and unused data) required only ~2300 CPUh (less than 3 days with a single 32-core node).
-
-Inherent redundancy in the graph data (the initial states of some embeddings are essentially different views 
-of the same matrices) was made to appear only inside the model. 
-This and the more aggressive graph pruning and input data precision reduction resulted in up to ~10 times 
-less RAM consumption compared to the previous version. 
-It allowed to accommodate a train set of ~15,000 molecules (~500,000 wavefunctions) in just ~100 Gb of RAM 
-and to some extent improved the situation with RAM -> VRAM transfer bottleneck. 
-Still, the bandwidth is critical.
-
-For some reason, the straightforward reimplementation of the local self-attention mechanism from the previous
-version resulted in severe train loss oscillations. 
-Seems to be something technical, I need to look into it.
-
-The major remaining issue is model's instability (expected for a GNN tbh). 
-Here, I tried a multistage fitting switching optimizers to achieve better stability.
-It did help but only a little.
-For this reason, the fine optimization of model and data parameters for better competition performance 
-is still complicated as it would each time require a number of repeated fittings.
-Hence, I didn't really try to tune the hyperparameters, properly balance the training data, or choose 
-an adequate train/val splitting strategy. 
-Instead, I focused my attention on the model architecture and training details that could lead to noticeable 
-performance improvements even in an unstable model.
-
-All in all, now I have some homework to do and the next time there will be less development and more data science.
