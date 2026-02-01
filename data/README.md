@@ -82,7 +82,7 @@ conformer of a molecule with internal id `id`.
 
 train set: ⏳️🗜️📤️
 
-test set: ⏳️🗜️📤️
+test set: [data at kaggle](https://www.kaggle.com/datasets/oleggromov/openadmet-expansionrx-challenge-test-mol-orbs)
 
 **External train data (no ADMET properties)**
 
@@ -98,46 +98,22 @@ calculated but not used: ⏳️🗜️📤️
 
 **Format:**
 
-The molecular orbitals of `rot_id`-th spatial orientation of `conf_id`-th 
-conformer of a molecule with internal id `id`are stored in 
-`<id>.<conf_id>.<rot_id>.zip` archives. 
-Each zip-archive will contain `<id>.<conf_id>.<rot_id>.xyz` file with Cartesian 
-coordinates and `<id>.<conf_id>.<rot_id>.json` with PTB calculation output.
-A calculation output example is give below. The values are rounded for illustrative purpose. 
-Each column in the `molecular orbitals` array is a molecular orbital expanded 
-in Grimme's vDZP basis set: 
-```plaintext
-{'HOMO-LUMO gap / eV': 17.47780448,
- 'dipole / a.u.': [-0.29942028, -0.61002809, -0.40525771],
- 'number of molecular orbitals': 13,
- 'number of electrons': 8,
- 'number of unpaired electrons': 0,
- 'fractional occupation': [2.0, 2.0, 2.0, 2.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
- 'molecular orbitals': [[-0.71, -0.00, -0.26, -0.00,  0.31, -0.00, -0.02, -0.00, -0.00, -0.00, -0.04,  0.00,  0.20],
-                        [-0.05, -0.00, -0.16, -0.00, -0.09,  0.00,  0.09,  0.00, -0.00,  0.00,  0.08,  0.00, -0.06],
-                        [ 0.06, -0.17, -0.52,  0.44, -0.25, -0.14,  0.17, -0.00, -0.14,  0.09, -0.06,  0.44,  0.58],
-                        [ 0.04,  0.48, -0.34, -0.22, -0.17,  0.40,  0.12,  0.00,  0.07, -0.26, -0.04, -0.23,  0.38],
-                        [ 0.03, -0.31, -0.26, -0.59, -0.12, -0.26,  0.09,  0.00,  0.19,  0.17, -0.03, -0.60,  0.28],
-                        [-0.01, -0.04, -0.19,  0.19,  0.02,  0.03, -0.02, -0.00,  0.00, -0.10, -0.04, -0.33, -0.52],
-                        [-0.01,  0.11, -0.13, -0.10,  0.01, -0.07, -0.01,  0.00, -0.00,  0.30, -0.03,  0.17, -0.35],
-                        [-0.01, -0.07, -0.10, -0.25,  0.01,  0.05, -0.01, -0.00, -0.00, -0.19, -0.02,  0.45, -0.26],
-                        [ 0.00,  0.02,  0.02,  0.00, -0.10, -0.25,  0.02,  0.06,  0.31, -0.34, -0.72,  0.18, -0.12],
-                        [-0.00, -0.02,  0.01, -0.00,  0.03,  0.23,  0.39, -0.41, -0.06,  0.31, -0.36, -0.03, -0.34],
-                        [ 0.00, -0.03,  0.01,  0.00, -0.10,  0.35, -0.26,  0.30,  0.21,  0.46, -0.30,  0.12,  0.15],
-                        [-0.01, -0.00, -0.01,  0.00,  0.13,  0.02,  0.45,  0.35,  0.42,  0.03,  0.28,  0.24, -0.29],
-                        [ 0.00, -0.00, -0.00,  0.01, -0.00,  0.01, -0.19, -0.42,  0.61,  0.02,  0.26,  0.35,  0.18],
-                        [-0.21,  0.33,  0.20, -0.00, -0.22, -0.26, -0.05, -0.00,  0.00,  0.00, -0.08,  0.00,  0.07],
-                        [ 0.04,  0.05,  0.02, -0.00, -0.29, -0.10,  0.11,  0.00,  0.00,  0.12,  0.15, -0.00, -0.26],
-                        [-0.03,  0.02, -0.03,  0.02,  0.16,  0.23, -0.18, -0.17,  0.13, -0.13, -0.03, -0.20, -0.11],
-                        [ 0.01,  0.01, -0.02, -0.01, -0.17, -0.01, -0.22,  0.09, -0.07,  0.27,  0.06,  0.10, -0.28],
-                        [-0.02,  0.01, -0.01, -0.03,  0.18,  0.18, -0.05,  0.23, -0.18, -0.20, -0.04,  0.27,  0.02],
-                        [-0.21, -0.33,  0.20,  0.00, -0.22,  0.26, -0.05,  0.00,  0.00, -0.00, -0.08, -0.00,  0.07],
-                        [ 0.04, -0.05,  0.02,  0.00, -0.29,  0.10,  0.11,  0.00,  0.00, -0.12,  0.16, -0.00, -0.26],
-                        [-0.01, -0.02, -0.03,  0.02,  0.00, -0.14, -0.24,  0.17,  0.13, -0.07,  0.02, -0.20, -0.23],
-                        [-0.04, -0.02, -0.02, -0.01,  0.28, -0.26, -0.06, -0.09, -0.07,  0.31, -0.07,  0.10,  0.05],
-                        [ 0.01, -0.01, -0.01, -0.03, -0.10, -0.00, -0.15, -0.23, -0.18, -0.17,  0.04,  0.27, -0.19]],
- 'method': 'PTB'}
-```
+The molecular orbitals of a molecule with internal id `id` are stored in 
+`<id>.npz` files (numpy compressed .npz format).
+
+`connectivity` array: pairs of indexes of the connected atoms (bonded or conjugated)
+
+`num_electrons` array: the number of the explicit electrons 
+
+`mo_occupation_conf<conf_id>` arrays: MOs occupation numbers for the `conf_id`-th conformer
+
+`mos_conf<conf_id>_rot<rot_id>` arrays: the molecular orbitals of `rot_id`-th spatial
+orientation of `conf_id`-th conformer (in Grimme's vDZP basis set)
+
+`atoms_conf<conf_id>` arrays: atomic numbers for the `conf_id`-th conformer
+
+`coords_conf<conf_id>_rot<rot_id>` arrays: atomic cartesian coordinates of `rot_id`-th spatial
+orientation of `conf_id`-th conformer
 
 ### Molecular properties
 
