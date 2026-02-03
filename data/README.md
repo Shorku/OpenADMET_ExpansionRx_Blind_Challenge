@@ -80,7 +80,7 @@ conformer of a molecule with internal id `id`.
 
 **OpenADMET/ExpansionRx data**
 
-train set: ⏳️🗜️📤️
+train set: [data at kaggle](https://www.kaggle.com/datasets/oleggromov/openadmet-expansionrx-challenge-train-mol-orbs)
 
 test set: [data at kaggle](https://www.kaggle.com/datasets/oleggromov/openadmet-expansionrx-challenge-test-mol-orbs)
 
