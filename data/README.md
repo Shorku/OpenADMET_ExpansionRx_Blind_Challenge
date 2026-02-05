@@ -66,9 +66,9 @@ calculated but not used: `physchem_external_unused_geoms.zip`
 
 **External train data with ADMET properties**
 
-included in the final solution: ⏳️🗜️📤️
+included in the final solution: `admet_external_train_geoms.zip`
 
-calculated but not used: ⏳️🗜️📤️
+calculated but not used: `admet_external_unused_geoms.zip`
 
 **Format:**
 
