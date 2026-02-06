@@ -86,7 +86,7 @@ test set: [data at kaggle](https://www.kaggle.com/datasets/oleggromov/openadmet-
 
 **External train data (no ADMET properties)**
 
-included in the final solution: ⏳️🗜️📤️
+included in the final solution: [data at kaggle](https://www.kaggle.com/datasets/oleggromov/openadmet-expansionrx-challenge-ph-ext-mol-orbs)
 
 calculated but not used: ⏳️🗜️📤️
 
