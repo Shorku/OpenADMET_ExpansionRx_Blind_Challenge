@@ -94,7 +94,7 @@ calculated but not used: [data at kaggle](https://www.kaggle.com/datasets/oleggr
 
 included in the final solution: [data at kaggle](https://www.kaggle.com/datasets/oleggromov/openadmet-expansionrx-challenge-admet-ext-mol-orbs)
 
-calculated but not used: ⏳️🗜️📤️
+calculated but not used: [data at kaggle](https://www.kaggle.com/datasets/oleggromov/openadmet-expansionrx-challenge-ext-unuse-mol-orbs)
 
 **Format:**
 
